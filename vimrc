@@ -92,10 +92,6 @@ nmap <leader>l :set list!<CR>
 set listchars=tab:▸\ ,eol:¬
 "
 
-augroup mkd
-    autocmd BufRead *.mkd  set ai formatoptions=tcroqn2 comments=n:&gt;
-augroup END
-
 function! MyFoldText()
     let line = getline(v:foldstart)
 
