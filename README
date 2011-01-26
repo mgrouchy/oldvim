@@ -1,0 +1,19 @@
+My Vim settings, mostly mostly used for python/django + html & js dev.
+
+setup (on osx):
+git clone git://github.com/mgrouchy/vim.git
+
+mv vim .vim
+cd .vim
+
+git submodule init
+git submodule update
+
+ln -s ~/.vim/gvimrc ~/.gvimrc
+ln -s ~/.vim/vimrc ~/.vimrc
+
+And your good to go.
+
+Any issues or bugs, email me at mgrouchy@gmail.com
+
+
