@@ -75,7 +75,7 @@ if has("gui_running")
 	set go-=T
 	set columns=185
 	set cursorline
-	colorscheme Mustang
+	colorscheme Succulent
 	set anti
 	set background=dark
 	" Save when losing focus "
