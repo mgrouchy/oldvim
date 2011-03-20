@@ -1,7 +1,7 @@
 My Vim settings, mostly mostly used for python/django + html & js dev.
 
 setup (on osx):
-git clone git://github.com/mgrouchy/vim.git
+git clone git@github.com:mgrouchy/vim.git
 
 mv vim .vim
 cd .vim
