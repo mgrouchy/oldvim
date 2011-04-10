@@ -11,6 +11,7 @@ set ignorecase
 set title
 set ttyfast
 set list
+set nowrap
 set colorcolumn=81 "to help us keep our lines under 80 chars
 "keep an extra long history
 set history=1000
