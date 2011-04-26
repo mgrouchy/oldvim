@@ -98,6 +98,11 @@ let NERDTreeWinSize=25
 let python_highlight_all = 1
 let python_slow_sync = 1
 
+"vim gist config
+let g:gist_clip_command = 'pbcopy'
+let g:gist_detect_filetype = 1
+
+
 "status line
 set laststatus=2
 set statusline=%{fugitive#statusline()}\ %F%m%r%h%w\ [fmt=%{&ff}]\ [type=%Y]\ [pos=%l,%v][%p%%]\ %{strftime(\"%d/%m/%y\ -\ %H:%M\")}
