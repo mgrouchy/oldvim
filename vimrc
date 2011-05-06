@@ -1,3 +1,4 @@
+set background=dark
 set nocompatible
 set number
 set encoding=utf8
@@ -13,35 +14,29 @@ set ttyfast
 set list
 "keep an extra long history
 set history=1000
-
 "set up tabs and indentation, default to 4 space tabs. We don't actually use
 "spaces here. This is overwritten in individual syntax files
 set shiftwidth=4
 set tabstop=4
-
-syntax on
-
+syntax on "syntax highlighting
 "store temp files in non-annoying place
 set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
-
 "While typing a search command, show where the pattern matches
 setlocal incsearch
 "When there is a previous search pattern, highlight all its matches
 setlocal hlsearch
-
+"turn on pathogen
 call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
-
 
 " Only do this part when compiled with support for autocommands
 if has("autocmd")
 	" Enable file type detection
 	filetype plugin indent on
-
 	" Syntax of these languages is fussy over tabs Vs spaces
      autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
-	" Customisations based on house-style (arbitrary)
+	"Customisations based on personal preferences
     autocmd FileType html setlocal ts=2 sts=2 sw=2 noexpandtab
     autocmd FileType css setlocal ts=2 sts=2 sw=2 noexpandtab
     autocmd FileType javascript setlocal ts=4 sts=4 sw=4 noexpandtab
@@ -49,25 +44,19 @@ if has("autocmd")
 	autocmd BufNewFile,BufRead *.rss setfiletype xml
 	"delete all trailing whitespace on save
 	autocmd BufWritePre * :%s/\s\+$//e
-
 	"Autocomplete
 	autocmd FileType python set omnifunc=pythoncomplete#Complete
 	autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
 	autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
 	autocmd FileType css set omnifunc=csscomplete#CompleteCSS
-
 	"enable django template syntax highlighting automatically
 	autocmd BufRead,BufNewFile *.html setfiletype htmldjango
 	autocmd FileType htmldjango setlocal ts=2 sts=2 sw=2 noexpandtab
     "everytime I save, source the vimrc
     autocmd bufwritepost .vimrc source $MYVIMRC
-
-
 else
 	set autoindent
 endif
-
-set background=dark
 
 
 " NERD_tree config
