@@ -13,4 +13,7 @@ set guifont=Monaco:h11
 "vim gist config(specifically for OSX)
 let g:gist_clip_command = 'pbcopy'
 let g:gist_detect_filetype = 1
+" configuration for Conque
+let g:ConqueTerm_Color = 2
+let g:ConqueTerm_ReadUnfocused = 1
 
