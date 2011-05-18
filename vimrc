@@ -45,7 +45,12 @@ if has("autocmd")
 	"delete all trailing whitespace on save
 	autocmd BufWritePre * :%s/\s\+$//e
 	"Autocomplete
+
+	"python autocomplete with supertab
 	autocmd FileType python set omnifunc=pythoncomplete#Complete
+	let g:SuperTabDefaultCompletionType = "context"
+	set completeopt=menuone,longest,preview
+
 	autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
 	autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
 	autocmd FileType css set omnifunc=csscomplete#CompleteCSS
