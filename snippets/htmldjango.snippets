@@ -1,0 +1,42 @@
+extends html
+
+snippet for "For Loop" b!
+{% for ${1:item} in ${2:items} %}
+$0
+{% endfor %}
+endsnippet
+
+snippet block "Block" b!
+{% block ${1:content} %}
+$0
+{% endblock %}
+endsnippet
+
+snippet {% "Tag" w!
+{% ${1:name}$2 %}
+$0
+{% end$1 %}
+endsnippet
+
+snippet {{ "Variable" w!
+{{ ${1:value} }}
+endsnippet
+
+snippet if "If Block" b!
+{% if ${1:condition} %}
+$0
+{% endif %}
+endsnippet
+
+snippet ife "If / Else Block" b!
+{% if ${1:condition} %}
+$2
+{% else %}
+$3
+{% endif %}
+endsnippet
+
+snippet extends "Extends" b!
+{% extends "${1:base.html}" %}
+endsnippet
+

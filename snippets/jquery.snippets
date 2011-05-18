@@ -1,0 +1,106 @@
+extends javascript
+
+snippet when "Deferreds" b!
+$.when(${1:deferred}).${2:done/then}(
+	function(ajaxArgs) { /* ajaxArgs is ["success", statusText, jqXHR] */
+		${2:alert(ajaxArgs[1]);}
+	}
+);
+endsnippet
+
+snippet ajaxs "AJAX Setup" b!
+$.ajaxSetup({
+	url: "${1:url}",
+	type: "${2:POST}",
+	dataType: "${3:xml/html/script/json}",
+	data: $.param($("${4:selector}")),
+	complete: function() {
+		$5
+	},
+	success: function() {
+		$6
+	},
+	error: function() {
+		$7
+	},
+});
+endsnippet
+
+snippet ajax "AJAX" b!
+$.ajax({
+	url: "${1:url}",
+	type: "${2:POST}",
+	dataType: "${3:xml/html/script/json}",
+	data: $.param($("${4:selector}")),
+	complete: function() {
+		$5
+	},
+	success: function() {
+		$6
+	},
+	error: function() {
+		$7
+	},
+});
+endsnippet
+
+snippet empty "Empty Test Utility" w!
+jQuery.isEmptyObject(${1:obj})
+endsnippet
+
+snippet hover "Hover Handler" w!
+.hover(function() {
+	$1
+}, function() {
+	$2
+});
+endsnippet
+
+snippet noop "NOOP Function" w!
+jQuery.noop()
+endsnippet
+
+snippet plain "Plain Object Test Utility" w!
+jQuery.isPlainObject(${1:obj})
+endsnippet
+
+snippet proxy "Proxy" w!
+jQuery.proxy(${1:obj}, '${2:method}')
+endsnippet
+
+snippet ready "Ready Handler" b!
+$(document).ready(function() {
+	$0
+});
+endsnippet
+
+snippet this "This Object" w!
+$(this)
+endsnippet
+
+snippet toggle "Complex Toggle Handler" w!
+.toggle(function() {
+	$1
+}, function() {
+	$2
+});
+endsnippet
+
+snippet trim "Trim Utility" w!
+$.trim('${1:string}')
+endsnippet
+
+snippet . "Method" w!
+.${1:name}($0)
+endsnippet
+
+snippet .. "Method (Multiline)" w!
+.${1:name}(
+	$0
+)
+endsnippet
+
+snippet $ "CSS Selector" w!
+$('${1:css}')
+endsnippet
+

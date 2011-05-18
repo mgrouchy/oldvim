@@ -1,0 +1,53 @@
+snippet * "Italics" !b
+*$0*
+endsnippet
+
+snippet ** "Bold" !b
+**$0**
+endsnippet
+
+snippet h "Heading" !b
+${1:Heading}
+`!p snip.rv = len(t[1]) * '='`
+$0
+endsnippet
+
+snippet h "Sub Heading" !b
+${1:Sub Heading}
+`!p snip.rv = len(t[1]) * '-'`
+$0
+endsnippet
+
+snippet s "Section" b!
+# ${1:Section Name} #
+$0
+endsnippet
+
+snippet ss "Sub Section" b!
+## ${1:Section Name} ##
+$0
+endsnippet
+
+snippet sss "SubSub Section" b!
+### ${1:Section Name} ###
+$0
+endsnippet
+
+snippet par "Paragraph" b!
+#### ${1:Paragraph Name} ####
+$0
+endsnippet
+
+snippet spar "Paragraph" b!
+##### ${1:Paragraph Name} #####
+$0
+endsnippet
+
+snippet link "Link" w!
+[${1:Title}](${3:http://${2:example.com}})
+endsnippet
+
+snippet img "Image" w!
+![${1:alt}](${2:path}${3/.+/ "/}${3:title}${3/.+/"/})
+endsnippet
+
