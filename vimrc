@@ -79,12 +79,8 @@ let python_slow_sync = 1
 set laststatus=2
 set statusline=%{fugitive#statusline()}\ %F%m%r%h%w\ [fmt=%{&ff}]\ [type=%Y]\ [pos=%l,%v][%p%%]\ %{strftime(\"%d/%m/%y\ -\ %H:%M\")}
 
-" Shortcut to rapidly toggle `set list`
-nmap <leader>l :set list!<CR>
-
 " Use the same symbols as TextMate for tabstops and EOLs
 set listchars=tab:▸\ ,eol:¬
-"
 
 function! MyFoldText()
     let line = getline(v:foldstart)
@@ -104,8 +100,24 @@ endfunction
 
 set foldtext=MyFoldText()
 
+
+"Add the virtualenv's site-packages to vim path(if you are in a virtualenv)
+py << EOF
+import os.path
+import sys
+import vim
+if 'VIRTUAL_ENV' in os.environ:
+    project_base_dir = os.environ['VIRTUAL_ENV']
+    sys.path.insert(0, project_base_dir)
+    activate_this = os.path.join(project_base_dir, 'bin/activate_this.py')
+    execfile(activate_this, dict(__file__=activate_this))
+EOF
+
+
 "mappings
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Shortcut to rapidly toggle `set list`
+nmap <leader>l :set list!<CR>
 "control up down to change between buffers
 noremap <C-Down> <C-W>j
 noremap <C-Up> <C-W>k
