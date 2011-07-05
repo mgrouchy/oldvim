@@ -31,3 +31,6 @@
 [submodule "bundle/pydoc"]
 	path = bundle/pydoc
 	url = https://github.com/fs111/pydoc.vim.git
+[submodule "bundle/jshint"]
+	path = bundle/jshint
+	url = https://github.com/manalang/jshint.vim.git
