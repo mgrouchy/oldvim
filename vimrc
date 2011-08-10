@@ -30,38 +30,35 @@ setlocal hlsearch
 call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
 
-" Only do this part when compiled with support for autocommands
-if has("autocmd")
-	" Enable file type detection
-	filetype plugin indent on
-	" Syntax of these languages is fussy over tabs Vs spaces
-     autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
-	"Customisations based on personal preferences
-    autocmd FileType html setlocal ts=2 sts=2 sw=2 noexpandtab
-    autocmd FileType css setlocal ts=2 sts=2 sw=2 noexpandtab
-    autocmd FileType javascript setlocal ts=4 sts=4 sw=4 noexpandtab
-   " Treat .rss files as XML
-	autocmd BufNewFile,BufRead *.rss setfiletype xml
-	"delete all trailing whitespace on save
-	autocmd BufWritePre * :%s/\s\+$//e
-	"Autocomplete
+" Enable file type detection
+filetype plugin indent on
+" Syntax of these languages is fussy over tabs Vs spaces
+au FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
+"Customisations based on personal preferences
+au FileType html setlocal ts=2 sts=2 sw=2 noexpandtab
+au FileType css setlocal ts=2 sts=2 sw=2 noexpandtab
+au FileType javascript setlocal ts=4 sts=4 sw=4 noexpandtab
+" Treat .rss files as XML
+au BufNewFile,BufRead *.rss setfiletype xml
+"delete all trailing whitespace on save
+au BufWritePre * :%s/\s\+$//e
+"Autocomplete
 
-	"python autocomplete with supertab
-	autocmd FileType python set omnifunc=pythoncomplete#Complete
-	let g:SuperTabDefaultCompletionType = "context"
-	set completeopt=menuone,longest,preview
+"python autocomplete with supertab
+au FileType python set omnifunc=pythoncomplete#Complete
+let g:SuperTabDefaultCompletionType = "context"
+set completeopt=menuone,longest,preview
 
-	autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
-	autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
-	autocmd FileType css set omnifunc=csscomplete#CompleteCSS
-	"enable django template syntax highlighting automatically
-	autocmd BufRead,BufNewFile *.html setfiletype htmldjango
-	autocmd FileType htmldjango setlocal ts=2 sts=2 sw=2 noexpandtab
-    "everytime I save, source the vimrc
-    autocmd bufwritepost .vimrc source $MYVIMRC
-else
-	set autoindent
-endif
+au FileType javascript set omnifunc=javascriptcomplete#CompleteJS
+au FileType html set omnifunc=htmlcomplete#CompleteTags
+au FileType css set omnifunc=csscomplete#CompleteCSS
+"enable django template syntax highlighting automatically
+au BufRead,BufNewFile *.html setlocal filetype=htmldjango
+
+au FileType htmldjango setlocal ts=2 sts=2 sw=2 noexpandtab
+
+"everytime I save, source the vimrc
+au bufwritepost .vimrc source $MYVIMRC
 
 
 " NERD_tree config
@@ -112,7 +109,6 @@ if 'VIRTUAL_ENV' in os.environ:
     activate_this = os.path.join(project_base_dir, 'bin/activate_this.py')
     execfile(activate_this, dict(__file__=activate_this))
 EOF
-
 
 "mappings
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
