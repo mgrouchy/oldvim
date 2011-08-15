@@ -112,3 +112,5 @@ noremap <C-right> <ESC>:bn<CR>
 noremap <C-left> <ESC>:bp<CR>
 
 cmap w!! w !sudo tee %
+
+imap jj <Esc>
