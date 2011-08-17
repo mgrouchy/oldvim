@@ -31,3 +31,6 @@
 [submodule "bundle/jshint"]
 	path = bundle/jshint
 	url = https://github.com/manalang/jshint.vim.git
+[submodule "bundle/pytest"]
+	path = bundle/pytest
+	url = https://github.com/alfredodeza/pytest.vim.git

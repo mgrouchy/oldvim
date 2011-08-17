@@ -49,6 +49,10 @@ au BufWritePre * :%s/\s\+$//e
 au FileType python set omnifunc=pythoncomplete#Complete
 let g:SuperTabDefaultCompletionType = "context"
 set completeopt=menuone,longest,preview
+set pumpheight=6
+
+" Don't let pyflakes use the quickfix window
+let g:pyflakes_use_quickfix = 0
 
 au FileType javascript set omnifunc=javascriptcomplete#CompleteJS
 au FileType html set omnifunc=htmlcomplete#CompleteTags
@@ -102,6 +106,8 @@ let g:html_indent_tags = 'li\|p'
 
 "mappings
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"map <leader>
+let mapleader = ","
 " Shortcut to rapidly toggle `set list`
 nmap <leader>l :set list!<CR>
 "control up down to change between buffers
@@ -110,7 +116,13 @@ noremap <C-Up> <C-W>k
 "changes the buffer in the current window to the next or the previous one
 noremap <C-right> <ESC>:bn<CR>
 noremap <C-left> <ESC>:bp<CR>
-
+"oops? forgot to sudo? w!!
 cmap w!! w !sudo tee %
-
+"<Esc> to jj
 imap jj <Esc>
+"Ack searching
+nmap <leader>a <Esc>:Ack!
+" Pytest
+nmap <silent><Leader>f <Esc>:Pytest file<CR>
+nmap <silent><Leader>c <Esc>:Pytest class<CR>
+nmap <silent><Leader>m <Esc>:Pytest method<CR>
