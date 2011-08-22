@@ -49,7 +49,6 @@ au BufWritePre * :%s/\s\+$//e
 au FileType python set omnifunc=pythoncomplete#Complete
 let g:SuperTabDefaultCompletionType = "context"
 set completeopt=menuone,longest,preview
-set pumpheight=6
 
 " Don't let pyflakes use the quickfix window
 let g:pyflakes_use_quickfix = 0
