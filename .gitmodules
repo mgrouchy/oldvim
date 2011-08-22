@@ -34,3 +34,6 @@
 [submodule "bundle/pytest"]
 	path = bundle/pytest
 	url = https://github.com/alfredodeza/pytest.vim.git
+[submodule "bundle/tagbar"]
+	path = bundle/tagbar
+	url = git://github.com/majutsushi/tagbar.git
