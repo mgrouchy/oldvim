@@ -47,7 +47,6 @@ au BufWritePre * :%s/\s\+$//e
 
 "python autocomplete with supertab
 au FileType python set omnifunc=pythoncomplete#Complete
-let g:SuperTabDefaultCompletionType = "context"
 set completeopt=menuone,longest,preview
 
 " Don't let pyflakes use the quickfix window
@@ -64,6 +63,8 @@ au FileType htmldjango setlocal ts=2 sts=2 sw=2 noexpandtab
 "everytime I save, source the vimrc
 au bufwritepost .vimrc source $MYVIMRC
 
+"make supertab work with autocomplete
+let g:SuperTabDefaultCompletionType = "context"
 
 " NERD_tree config
 let NERDTreeChDirMode=2
@@ -102,6 +103,10 @@ endfunction
 set foldtext=MyFoldText()
 
 let g:html_indent_tags = 'li\|p'
+
+"TabBar settings
+let g:tagbar_usearrows = 1
+nnoremap <leader>tb :TagbarToggle<CR>
 
 "mappings
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
