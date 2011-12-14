@@ -64,7 +64,7 @@ au FileType htmldjango setlocal ts=2 sts=2 sw=2 noexpandtab
 au bufwritepost .vimrc source $MYVIMRC
 
 "make supertab work with autocomplete
-let g:SuperTabDefaultCompletionType = "context"
+"let g:SuperTabDefaultCompletionType = "context"
 
 " NERD_tree config
 let NERDTreeChDirMode=2
