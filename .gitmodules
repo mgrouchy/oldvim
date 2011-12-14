@@ -40,3 +40,6 @@
 [submodule "bundle/vim-peepopen"]
 	path = bundle/vim-peepopen
 	url = https://github.com/shemerey/vim-peepopen.git
+[submodule "bundle/solarized"]
+	path = bundle/solarized
+	url = git://github.com/altercation/vim-colors-solarized.git
