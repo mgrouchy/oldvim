@@ -1,5 +1,5 @@
 set background=dark
-colorscheme solarized
+colorscheme tomorrow_night
 set nocompatible
 set number
 set numberwidth=5
@@ -46,7 +46,7 @@ au BufNewFile,BufRead *.rss setfiletype xml
 au BufWritePre * :%s/\s\+$//e
 "Autocomplete
 
-"python autocomplete with supertab
+"python autocomplete
 au FileType python set omnifunc=pythoncomplete#Complete
 set completeopt=menuone,longest,preview
 
@@ -63,9 +63,6 @@ au FileType htmldjango setlocal ts=2 sts=2 sw=2 noexpandtab
 
 "everytime I save, source the vimrc
 au bufwritepost .vimrc source $MYVIMRC
-
-"make supertab work with autocomplete
-"let g:SuperTabDefaultCompletionType = "context"
 
 " NERD_tree config
 let NERDTreeChDirMode=2
@@ -102,6 +99,7 @@ function! MyFoldText()
 endfunction
 
 set foldtext=MyFoldText()
+
 
 let g:html_indent_tags = 'li\|p'
 
