@@ -13,6 +13,8 @@ set guifont=Monaco:h12
 let g:gist_clip_command = 'pbcopy'
 let g:gist_detect_filetype = 1
 
+"transparency settings, I like it just slightly transparent
+set transparency=7
 
 "Add the virtualenv's site-packages to vim path(if you are in a virtualenv)
 py << EOF

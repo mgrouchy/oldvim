@@ -1,5 +1,7 @@
+" Colorscheme
 set background=dark
 colorscheme tomorrow_night
+
 set nocompatible
 set number
 set numberwidth=5
@@ -24,6 +26,9 @@ syntax on "syntax highlighting
 "store temp files in non-annoying place
 set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
+set undodir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp     " undo files
+set backup                        " enable backups
+
 "While typing a search command, show where the pattern matches
 setlocal incsearch
 "When there is a previous search pattern, highlight all its matches
@@ -113,6 +118,8 @@ nnoremap <leader>tb :TagbarToggle<CR>
 let mapleader = ","
 " Shortcut to rapidly toggle `set list`
 nmap <leader>l :set list!<CR>
+"clear search matches
+noremap <leader><space> :noh<cr>:call clearmatches()<cr>
 "control up down to change between buffers
 noremap <C-Down> <C-W>j
 noremap <C-Up> <C-W>k
