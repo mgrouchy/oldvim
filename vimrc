@@ -55,9 +55,6 @@ au BufWritePre * :%s/\s\+$//e
 au FileType python set omnifunc=pythoncomplete#Complete
 set completeopt=menuone,longest,preview
 
-" Don't let pyflakes use the quickfix window
-let g:pyflakes_use_quickfix = 0
-
 au FileType javascript set omnifunc=javascriptcomplete#CompleteJS
 au FileType html set omnifunc=htmlcomplete#CompleteTags
 au FileType css set omnifunc=csscomplete#CompleteCSS
@@ -105,13 +102,14 @@ endfunction
 
 set foldtext=MyFoldText()
 
-
 let g:html_indent_tags = 'li\|p'
 
 "TabBar settings
 let g:tagbar_usearrows = 1
 nnoremap <leader>tb :TagbarToggle<CR>
 
+"python mode settings
+"
 "mappings
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "map <leader>
@@ -132,7 +130,3 @@ cmap w!! w !sudo tee %
 imap jj <Esc>
 "Ack searching
 nmap <leader>a <Esc>:Ack!
-" Pytest
-nmap <silent><Leader>f <Esc>:Pytest file<CR>
-nmap <silent><Leader>c <Esc>:Pytest class<CR>
-nmap <silent><Leader>m <Esc>:Pytest method<CR>
