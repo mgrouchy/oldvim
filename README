@@ -1,6 +1,6 @@
 My Vim settings, mostly mostly used for python/django + html & js dev.
-The only outside requirement is Ack and Ctags, I would suggest if you are osx
-install them with homebrew.
+The only outside requirement is Ack and Ctags. I would suggest if you are using osx
+that you install them with homebrew.
 
 setup (on osx):
 
@@ -18,8 +18,11 @@ git submodule update
 ln -s ~/.vim/gvimrc ~/.gvimrc
 ln -s ~/.vim/vimrc ~/.vimrc
 
-And your good to go.
+And you're good to go.
 
 Any issues or bugs, email me at mgrouchy@gmail.com
 
+Protip: want to update all the submodules?
+
+    git submodule foreach git pull origin master --recurse-submodules
 
