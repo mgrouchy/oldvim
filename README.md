@@ -1,5 +1,5 @@
 My Vim settings, mostly mostly used for python/django + html & js dev.
-The only outside requirement is Ack and Ctags. I would suggest if you are using osx
+The only outside requirements are [Ack](http://betterthangrep.com/) and Ctags. I would suggest if you are using osx
 that you install them with homebrew.
 
 setup (on osx):
