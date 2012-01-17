@@ -60,11 +60,30 @@ au FileType html set omnifunc=htmlcomplete#CompleteTags
 au FileType css set omnifunc=csscomplete#CompleteCSS
 "enable django template syntax highlighting automatically
 au BufRead,BufNewFile *.html setlocal filetype=htmldjango
-
 au FileType htmldjango setlocal ts=2 sts=2 sw=2 noexpandtab
+"django/python settings
+augroup ft_django
+    au!
+
+    au BufNewFile,BufRead urls.py           normal! zR
+    au BufNewFile,BufRead dashboard.py      normal! zR
+    au BufNewFile,BufRead local_settings.py normal! zR
+
+    au BufNewFile,BufRead admin.py     setlocal filetype=python.django
+    au BufNewFile,BufRead urls.py      setlocal filetype=python.django
+    au BufNewFile,BufRead models.py    setlocal filetype=python.django
+    au BufNewFile,BufRead views.py     setlocal filetype=python.django
+    au BufNewFile,BufRead settings.py  setlocal filetype=python.django
+    au BufNewFile,BufRead settings.py  setlocal foldmethod=marker
+    au BufNewFile,BufRead forms.py     setlocal filetype=python.django
+	au BufNewFile,BufRead tests.py     setlocal filetype=python.django
+augroup END
+" }}}
 
 "everytime I save, source the vimrc
 au bufwritepost .vimrc source $MYVIMRC
+
+au BufNewFile,BufRead *.j2 setlocal filetype=htmljinja
 
 " NERD_tree config
 let NERDTreeChDirMode=2
@@ -130,3 +149,7 @@ cmap w!! w !sudo tee %
 imap jj <Esc>
 "Ack searching
 nmap <leader>a <Esc>:Ack!
+
+nmap <leader>pd :setlocal ft=python.django<CR>
+nmap <leader>hd :setlocal ft=htmldjango<CR>
+
