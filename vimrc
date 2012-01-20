@@ -61,6 +61,7 @@ au FileType css set omnifunc=csscomplete#CompleteCSS
 "enable django template syntax highlighting automatically
 au BufRead,BufNewFile *.html setlocal filetype=htmldjango
 au FileType htmldjango setlocal ts=2 sts=2 sw=2 noexpandtab
+
 "django/python settings
 augroup ft_django
     au!
@@ -78,7 +79,6 @@ augroup ft_django
     au BufNewFile,BufRead forms.py     setlocal filetype=python.django
 	au BufNewFile,BufRead tests.py     setlocal filetype=python.django
 augroup END
-" }}}
 
 "everytime I save, source the vimrc
 au bufwritepost .vimrc source $MYVIMRC
