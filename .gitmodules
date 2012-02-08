@@ -40,3 +40,9 @@
 [submodule "bundle/snipmate_for_django"]
 	path = bundle/snipmate_for_django
 	url = git://github.com/mgrouchy/snipmate_for_django.git
+[submodule "bundle/css-color"]
+	path = bundle/css-color
+	url = https://github.com/skammer/vim-css-color.git
+[submodule "bundle/css3-syntx"]
+	path = bundle/css3-syntx
+	url = https://github.com/hail2u/vim-css3-syntax.git
