@@ -125,7 +125,7 @@ let g:html_indent_tags = 'li\|p'
 
 "TabBar settings
 let g:tagbar_usearrows = 1
-nnoremap <leader>tb :TagbarToggle<CR>
+nmap <F8> :TagbarToggle<CR>
 
 "python mode settings
 "

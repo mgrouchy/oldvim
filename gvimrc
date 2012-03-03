@@ -7,7 +7,7 @@ set cursorline
 set anti
 " Save when losing focus "
 au FocusLost * :wa
-set guifont=Monaco:h12
+set guifont=Inconsolata\ XL:h12
 
 "vim gist config(specifically for OSX)
 let g:gist_clip_command = 'pbcopy'
