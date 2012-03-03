@@ -1,20 +1,32 @@
 " Colorscheme
 set background=dark
 colorscheme tomorrow_night
-
+" Default to act like vim, not vi
 set nocompatible
+" Turn on line numbers
 set number
 set numberwidth=5
+" utf8 incoding
 set encoding=utf8
+" smart indentation overriden by individual filetype settings
 set smartindent
+" show matching braces, brackets and such
 set showmatch
+" Turn off beeping and visual bells
 set vb t_vb=
+" incremental search
 set incsearch
+" show status line even when only one window is shown.
 set ls=2
+" show the current position (line+col) and percentage in buffer
 set ruler
+" don't distinguish between caps in search
 set ignorecase
+" set window title
 set title
+" fast terminal connection
 set ttyfast
+"turn on list characters
 set list
 "keep an extra long history
 set history=1000
@@ -39,7 +51,7 @@ call pathogen#helptags()
 
 " Enable file type detection
 filetype plugin indent on
-" Syntax of these languages is fussy over tabs Vs spaces
+" Syntax of these languages are fussy over tabs Vs spaces
 au FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 "Customisations based on personal preferences
 au FileType html setlocal ts=2 sts=2 sw=2 noexpandtab
@@ -127,8 +139,6 @@ let g:html_indent_tags = 'li\|p'
 let g:tagbar_usearrows = 1
 nmap <F8> :TagbarToggle<CR>
 
-"python mode settings
-"
 "mappings
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "map <leader>
