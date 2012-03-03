@@ -4,7 +4,7 @@
 " Hex colour conversion functions borrowed from the theme "Desert256""
 
 " Default GUI Colours
-let s:foreground = "c5c8c6"
+let s:foreground = "d7dad8"
 let s:background = "1d1f21"
 let s:selection = "373b41"
 let s:line = "282a2e"
@@ -270,7 +270,7 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
 	end
 
 	" Standard Highlighting
-	call <SID>X("Comment", s:comment, "", "")
+	call <SID>X("Comment", s:comment, "", "bold")
 	call <SID>X("Todo", s:comment, s:background, "")
 	call <SID>X("Title", s:comment, "", "")
 	call <SID>X("Identifier", s:red, "", "none")
@@ -281,7 +281,7 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
 	call <SID>X("Function", s:blue, "", "")
 	call <SID>X("Constant", s:orange, "", "")
 	call <SID>X("String", s:green, "", "")
-	call <SID>X("Special", s:orange, "", "")
+	call <SID>X("Special", s:orange, "", "bold")
 	call <SID>X("PreProc", s:purple, "", "")
 	call <SID>X("Operator", s:aqua, "", "none")
 	call <SID>X("Type", s:blue, "", "none")
@@ -320,10 +320,11 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
 
 	" Python Highlighting
 	call <SID>X("pythonInclude", s:purple, "", "")
-	call <SID>X("pythonStatement", s:purple, "", "")
+	call <SID>X("pythonStatement", s:purple, "", "bold")
 	call <SID>X("pythonConditional", s:purple, "", "")
 	call <SID>X("pythonFunction", s:blue, "", "")
-	call <SID>X("pythonOperator", s:red, "", "")
+	call <SID>X("pythonOperator", s:red, "", "bold")
+	call <SID>X("pythonBuiltin", s:blue, "", "bold")
 
 	" JavaScript Highlighting
 	call <SID>X("javaScriptBraces", s:foreground, "", "")
@@ -334,8 +335,12 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
 	call <SID>X("javaScriptMember", s:orange, "", "")
 
 	" Diff Highlighting
-	call <SID>X("diffAdded", s:green, "", "")
-	call <SID>X("diffRemoved", s:red, "", "")
+	call <SID>X("diffAdd", s:green, s:selection, "bold")
+	call <SID>X("diffRemoved", s:red, s:selection, "bold")
+	call <SID>X("diffChange", s:green, s:selection, "bold")
+	call <SID>X("diffText", s:red, s:selection, "bold")
+	call <SID>X("diffDelete", s:red, s:selection, "bold")
+
 
 	" Delete Functions
 	delf <SID>X
