@@ -46,3 +46,6 @@
 [submodule "bundle/css3-syntx"]
 	path = bundle/css3-syntx
 	url = https://github.com/hail2u/vim-css3-syntax.git
+[submodule "bundle/vim-powerline"]
+	path = bundle/vim-powerline
+	url = https://github.com/Lokaltog/vim-powerline.git
