@@ -31,7 +31,7 @@ set list
 "keep an extra long history
 set history=1000
 "set up tabs and indentation, default to 4 space tabs. We don't actually use
-"spaces here. This is overwritten in individual syntax files
+"tabs here. This is overwritten in individual syntax files
 set shiftwidth=4
 set tabstop=4
 syntax on "syntax highlighting
@@ -111,6 +111,7 @@ let python_slow_sync = 1
 "status line
 set laststatus=2
 set statusline=%{fugitive#statusline()}\ %F%m%r%h%w\ [fmt=%{&ff}]\ [type=%Y]\ [pos=%l,%v][%p%%]\ %{strftime(\"%d/%m/%y\ -\ %H:%M\")}
+
 
 " Use the same symbols as TextMate for tabstops and EOLs
 set listchars=tab:▸\ ,eol:¬
