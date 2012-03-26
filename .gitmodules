@@ -52,3 +52,6 @@
 [submodule "bundle/matchtag"]
 	path = bundle/matchtag
 	url = https://github.com/gregsexton/MatchTag.git
+[submodule "bundle/git"]
+	path = bundle/git
+	url = https://github.com/tpope/vim-git.git
