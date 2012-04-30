@@ -1,11 +1,18 @@
+" Default to act like vim, not vi
+set nocompatible
+" don't wrap lines
+set nowrap
 " Colorscheme
 set background=dark
 colorscheme tomorrow_night
-" Default to act like vim, not vi
-set nocompatible
 " Turn on line numbers
 set number
 set numberwidth=5
+set backspace=indent,eol,start  "Allow backspace in insert mode
+set showcmd                     "Show incomplete cmds down the bottom
+set showmode                    "Show current mode down the bottom
+set hidden                      "Allow current buffer to be put in background
+                                "without being written to disk
 " utf8 incoding
 set encoding=utf8
 " smart indentation overriden by individual filetype settings
@@ -41,6 +48,8 @@ set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 set undodir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp     " undo files
 set backup                        " enable backups
 
+set colorcolumn=81 "to help us keep our lines under 80 chars
+set cursorline
 "While typing a search command, show where the pattern matches
 setlocal incsearch
 "When there is a previous search pattern, highlight all its matches
@@ -117,30 +126,29 @@ set statusline=%{fugitive#statusline()}\ %F%m%r%h%w\ [fmt=%{&ff}]\ [type=%Y]\ [p
 
 " Use the same symbols as TextMate for tabstops and EOLs
 set listchars=tab:▸\ ,eol:¬
-
-"function! MyFoldText()
-"    let line = getline(v:foldstart)
-"
-"    let nucolwidth = &fdc + &number * &numberwidth
-"    let windowwidth = winwidth(0) - nucolwidth - 3
-"    let foldedlinecount = v:foldend - v:foldstart
-
-    " expand tabs into spaces "
-"    let onetab = strpart('          ', 0, &tabstop)
-"    let line = substitute(line, '\t', onetab, 'g')
-
-"    let line = strpart(line, 0, windowwidth - 2 -len(foldedlinecount))
-"    let fillcharcount = windowwidth - len(line) - len(foldedlinecount) - 4
-"    return line . '…' . repeat(" ",fillcharcount) . foldedlinecount . '…' . ' '
-"endfunction
-
-"set foldtext=MyFoldText()
+" Turn off file characters on statusline
+let g:Powerline_symbols = 'fancy'
 
 let g:html_indent_tags = 'li\|p'
 
 "TabBar settings
 let g:tagbar_usearrows = 1
 nmap <F8> :TagbarToggle<CR>
+
+" virtualenv settings
+"Add the virtualenv's site-packages to vim path(if you are in a virtualenv)
+py << EOF
+import os.path
+import sys
+import vim
+if 'VIRTUAL_ENV' in os.environ:
+    project_base_dir = os.environ['VIRTUAL_ENV']
+    sys.path.insert(0, project_base_dir)
+    activate_this = os.path.join(project_base_dir, 'bin/activate_this.py')
+    execfile(activate_this, dict(__file__=activate_this))
+EOF
+
+
 
 "mappings
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
