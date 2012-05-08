@@ -7,7 +7,7 @@ set background=dark
 colorscheme tomorrow_night
 " Turn on line numbers
 set number
-set numberwidth=5
+set numberwidth=4
 set backspace=indent,eol,start  "Allow backspace in insert mode
 set showcmd                     "Show incomplete cmds down the bottom
 set showmode                    "Show current mode down the bottom
@@ -134,6 +134,23 @@ let g:html_indent_tags = 'li\|p'
 "TabBar settings
 let g:tagbar_usearrows = 1
 nmap <F8> :TagbarToggle<CR>
+
+"CtrlP Settings
+" Set the max files
+let g:ctrlp_max_files = 10000
+" Find nearest ancestor that contains source control files.
+let g:ctrlp_working_path_mode = 2
+" Optimize file searching
+if has("unix")
+    let g:ctrlp_user_command = {
+                \   'types': {
+                \       1: ['.git/', 'cd %s && git ls-files']
+                \   },
+                \   'fallback': 'find %s -type f | head -' . g:ctrlp_max_files
+                \ }
+endif
+
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip,.git/,.hg/,.svn/
 
 " virtualenv settings
 "Add the virtualenv's site-packages to vim path(if you are in a virtualenv)
