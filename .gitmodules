@@ -49,3 +49,9 @@
 [submodule "bundle/ctrlp"]
 	path = bundle/ctrlp
 	url = https://github.com/kien/ctrlp.vim.git
+[submodule "bundle/vim-css-color"]
+	path = bundle/vim-css-color
+	url = https://github.com/ap/vim-css-color.git
+[submodule "bundle/matchtag"]
+	path = bundle/matchtag
+	url = https://github.com/gregsexton/MatchTag.git
