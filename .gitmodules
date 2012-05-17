@@ -37,18 +37,12 @@
 [submodule "bundle/snipmate_for_django"]
 	path = bundle/snipmate_for_django
 	url = git://github.com/mgrouchy/snipmate_for_django.git
-[submodule "bundle/css-color"]
-	path = bundle/css-color
-	url = https://github.com/skammer/vim-css-color.git
 [submodule "bundle/css3-syntx"]
 	path = bundle/css3-syntx
 	url = https://github.com/hail2u/vim-css3-syntax.git
 [submodule "bundle/vim-powerline"]
 	path = bundle/vim-powerline
 	url = https://github.com/Lokaltog/vim-powerline.git
-[submodule "bundle/matchtag"]
-	path = bundle/matchtag
-	url = https://github.com/gregsexton/MatchTag.git
 [submodule "bundle/git"]
 	path = bundle/git
 	url = https://github.com/tpope/vim-git.git
