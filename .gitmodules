@@ -25,9 +25,6 @@
 [submodule "bundle/tagbar"]
 	path = bundle/tagbar
 	url = git://github.com/majutsushi/tagbar.git
-[submodule "bundle/vim-peepopen"]
-	path = bundle/vim-peepopen
-	url = https://github.com/shemerey/vim-peepopen.git
 [submodule "bundle/markdown"]
 	path = bundle/markdown
 	url = https://github.com/tpope/vim-markdown.git
