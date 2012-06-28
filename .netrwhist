@@ -1,0 +1,10 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =8
+let g:netrw_dirhist_1='/Users/mgrouchy/Dropbox/.repositories/work/SourceMetrics/smetrics/smetrics'
+let g:netrw_dirhist_2='/Users/mgrouchy/Dropbox/.repositories/work/corel/promoter/survey'
+let g:netrw_dirhist_3='/Users/mgrouchy/Dropbox/dotfiles'
+let g:netrw_dirhist_4='/Users/mgrouchy/Dropbox/.repositories/work/corel/promoter/conf/locale/de/LC_MESSAGES'
+let g:netrw_dirhist_5='/Users/mgrouchy/Dropbox/.repositories/work/corel/promoter/survey'
+let g:netrw_dirhist_6='/Users/mgrouchy/Dropbox/.repositories/work/SourceMetrics/smetrics/publisher/publishers'
+let g:netrw_dirhist_7='/Users/mgrouchy/Dropbox/.repositories/work/SourceMetrics/smetrics/speak'
+let g:netrw_dirhist_8='/Users/mgrouchy/Dropbox/.repositories/personal/mikegrouchyv2/deploy/blog'
