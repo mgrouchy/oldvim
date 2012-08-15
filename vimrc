@@ -140,6 +140,7 @@ nmap <F8> :TagbarToggle<CR>
 let g:ctrlp_max_files = 10000
 " Find nearest ancestor that contains source control files.
 let g:ctrlp_working_path_mode = 2
+let g:ctrlp_root_markers = ['.git/']
 " Optimize file searching
 if has("unix")
     let g:ctrlp_user_command = {
@@ -150,7 +151,7 @@ if has("unix")
                 \ }
 endif
 
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip,.git/,.hg/,.svn/
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip,.git,.hg/,.svn/
 
 " virtualenv settings
 "Add the virtualenv's site-packages to vim path(if you are in a virtualenv)
