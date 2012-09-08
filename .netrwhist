@@ -1,0 +1,6 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =4
+let g:netrw_dirhist_1='/Users/mgrouchy/Dropbox/.repositories/work/SourceMetrics/smetrics/analytics/views'
+let g:netrw_dirhist_2='/Users/mgrouchy/Dropbox/.repositories/personal/nonshittynews/nsn'
+let g:netrw_dirhist_3='/Users/mgrouchy/Dropbox/.repositories/work/corel/promoter/conf/configs'
+let g:netrw_dirhist_4='/Users/mgrouchy/Dropbox/.repositories/work/SourceMetrics/smetrics/listen/lib/sentiment/mashape'
