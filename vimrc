@@ -154,7 +154,7 @@ endif
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,.git,.hg/,.svn/
 
 "supertab settings
-let g:SuperTabDefaultCompletionType = "context"
+let g:SuperTabDefaultCompletionType = "<c-x><c-o>"
 
 " virtualenv settings
 "Add the virtualenv's site-packages to vim path(if you are in a virtualenv)
