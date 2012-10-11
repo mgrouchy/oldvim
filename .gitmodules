@@ -55,3 +55,6 @@
 [submodule "bundle/supertab"]
 	path = bundle/supertab
 	url = git://github.com/ervandew/supertab.git
+[submodule "bundle/autocomplpop"]
+	path = bundle/autocomplpop
+	url = git://github.com/vim-scripts/AutoComplPop.git
