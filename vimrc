@@ -71,6 +71,10 @@ au BufNewFile,BufRead *.rss setfiletype xml
 "delete all trailing whitespace on save
 au BufWritePre * :%s/\s\+$//e
 "Autocomplete
+" automatically close autocompletition window
+autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
+autocmd InsertLeave * if pumvisible() == 0|pclose|endif"
+
 
 "python autocomplete
 au FileType python set omnifunc=pythoncomplete#Complete
