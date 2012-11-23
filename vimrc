@@ -13,6 +13,7 @@ set showcmd                     "Show incomplete cmds down the bottom
 set showmode                    "Show current mode down the bottom
 set hidden                      "Allow current buffer to be put in background
                                 "without being written to disk
+set autoread                    "reload files changed outside of vim
 " utf8 incoding
 set encoding=utf8
 " smart indentation overriden by individual filetype settings
@@ -45,8 +46,11 @@ syntax on "syntax highlighting
 "store temp files in non-annoying place
 set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
-set undodir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp     " undo files
 set backup                        " enable backups
+"filebased undo across sesions
+silent !mkdir ~/.vim/backups > /dev/null 2>&1
+set undodir=~/.vim/backups
+set undofile
 
 set colorcolumn=81 "to help us keep our lines under 80 chars
 set cursorline
