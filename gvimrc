@@ -4,13 +4,11 @@ set anti
 
 " Save when losing focus "
 au FocusLost * :wa
-set guifont=Inconsolata\ XL:h12
+set guifont=Menlo\ Regular\ for\ Powerline:h13
 
 "vim gist config(specifically for OSX)
 let g:gist_clip_command = 'pbcopy'
 let g:gist_detect_filetype = 1
 
 "transparency settings, I like it just slightly transparent
-set transparency=7
-
-
+set transparency=2
