@@ -20,6 +20,11 @@ set encoding=utf8
 set smartindent
 " show matching braces, brackets and such
 set showmatch
+
+" command timeout settings
+set ttimeout
+set ttimeoutlen=50
+
 " Turn off beeping and visual bells
 set vb t_vb=
 " incremental search
@@ -54,6 +59,7 @@ set undofile
 
 set colorcolumn=81 "to help us keep our lines under 80 chars
 set cursorline
+
 "While typing a search command, show where the pattern matches
 setlocal incsearch
 "When there is a previous search pattern, highlight all its matches
