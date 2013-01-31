@@ -84,6 +84,10 @@ au BufWritePre * :%s/\s\+$//e
 " automatically close autocompletition window
 autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
 autocmd InsertLeave * if pumvisible() == 0|pclose|endif"
+" no html autocompletition
+let g:acp_behaviorHtmlOmniLength = -1
+" no xml autocompletition
+let g:acp_behaviorXmlOmniLength = -1
 
 
 "python autocomplete
