@@ -19,9 +19,6 @@
 [submodule "bundle/gist-vim"]
 	path = bundle/gist-vim
 	url = https://github.com/mattn/gist-vim.git
-[submodule "bundle/jshint"]
-	path = bundle/jshint
-	url = https://github.com/rmanalan/jshint.vim.git
 [submodule "bundle/tagbar"]
 	path = bundle/tagbar
 	url = git://github.com/majutsushi/tagbar.git
