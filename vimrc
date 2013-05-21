@@ -149,6 +149,20 @@ let g:Powerline_symbols = 'fancy'
 
 let g:html_indent_tags = 'li\|p'
 
+set laststatus=2 " Always display the statusline in all windows
+set noshowmode " Hide the default mode text
+set rtp+=/Library/Python/2.7/site-packages/Powerline-beta-py2.7.egg/powerline/bindings/vim/
+
+if ! has('gui_running')
+    set ttimeoutlen=10
+    augroup FastEscape
+        autocmd!
+        au InsertEnter * set timeoutlen=0
+        au InsertLeave * set timeoutlen=1000
+    augroup END
+endif
+
+
 "TabBar settings
 let g:tagbar_usearrows = 1
 nmap <F8> :TagbarToggle<CR>

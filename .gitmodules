@@ -52,6 +52,3 @@
 [submodule "bundle/autocomplpop"]
 	path = bundle/autocomplpop
 	url = git://github.com/vim-scripts/AutoComplPop.git
-[submodule "bundle/vim-session"]
-	path = bundle/vim-session
-	url = git://github.com/xolox/vim-session.git
