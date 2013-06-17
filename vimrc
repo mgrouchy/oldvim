@@ -151,7 +151,7 @@ let g:html_indent_tags = 'li\|p'
 
 set laststatus=2 " Always display the statusline in all windows
 set noshowmode " Hide the default mode text
-set rtp+=/Library/Python/2.7/site-packages/Powerline-beta-py2.7.egg/powerline/bindings/vim/
+set rtp+=/Library/Python/2.7/site-packages/powerline/bindings/vim/
 
 if ! has('gui_running')
     set ttimeoutlen=10
