@@ -1,4 +1,4 @@
-set nocompatible " Default to act like vim, not vi
+set nocompatible "Default to act like vim, not vi
 set nowrap "don't wrap lines
 set background=dark "colorscheme
 colorscheme tomorrow_night
@@ -10,21 +10,21 @@ set showmode                    "Show current mode down the bottom
 set hidden                      "Allow current buffer to be put in background
                                 "without being written to disk
 set autoread                    "reload files changed outside of vim
-set encoding=utf8 " utf8 incoding
-set smartindent " smart indentation overriden by individual filetype settings
-set showmatch " show matching braces, brackets and such
+set encoding=utf8 "utf8 incoding
+set smartindent "smart indentation overriden by individual filetype settings
+set showmatch "show matching braces, brackets and such
 " command timeout settings
 set ttimeout
 set ttimeoutlen=50
-set vb t_vb= " Turn off beeping and visual bells
-set incsearch " incremental search
-set ls=2 " show status line even when only one window is shown.
-set ruler " show the current position (line+col) and percentage in buffer
-set ignorecase " don't distinguish between caps in search
+set vb t_vb= "Turn off beeping and visual bells
+set incsearch "incremental search
+set ls=2 "show status line even when only one window is shown.
+set ruler "show the current position (line+col) and percentage in buffer
+set ignorecase "don't distinguish between caps in search
 
-set title " set window title
+set title "set window title
 
-set ttyfast " fast terminal connection
+set ttyfast "fast terminal connection
 set list "turn on list characters
 set history=1000 "keep an extra long history
 
@@ -131,10 +131,6 @@ if ! has('gui_running')
 endif
 
 
-"TabBar settings
-let g:tagbar_usearrows = 1
-nmap <F8> :TagbarToggle<CR>
-
 "CtrlP Settings
 " Set the max files
 let g:ctrlp_max_files = 10000
@@ -153,6 +149,8 @@ endif
 
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,.git,.hg/,.svn/
 
+let g:gitgutter_enabled = 0
+
 " virtualenv settings
 "Add the virtualenv's site-packages to vim path(if you are in a virtualenv)
 py << EOF
@@ -166,16 +164,25 @@ if 'VIRTUAL_ENV' in os.environ:
     execfile(activate_this, dict(__file__=activate_this))
 EOF
 
+" Fix Cursor in TMUX
+if exists('$TMUX')
+    let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
+    let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
+else
+    let &t_SI = "\<Esc>]50;CursorShape=1\x7"
+    let &t_EI = "\<Esc>]50;CursorShape=0\x7"
+endif
 
+" Enable basic mouse behavior such as resizing buffers.
+set mouse=a
+if exists('$TMUX')  " Support resizing in tmux
+    set ttymouse=xterm2
+endif
 
 "mappings
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "map <leader>
 let mapleader = ","
-" Shortcut to rapidly toggle `set list`
-nmap <leader>l :set list!<CR>
-"clear search matches
-noremap <leader><space> :noh<cr>:call clearmatches()<cr>
 "control up down to change between buffers
 noremap <C-Down> <C-W>j
 noremap <C-Up> <C-W>k
@@ -186,8 +193,11 @@ noremap <C-left> <ESC>:bp<CR>
 cmap w!! w !sudo tee %
 "<Esc> to jj
 imap jj <Esc>
-"Ack searching
+noremap <leader><space> :noh<cr>:call clearmatches()<cr>
+nmap <leader>l :set list!<CR>
 nmap <leader>a <Esc>:Ack!
-
+nmap <leader>cb :CtrlPBuffer<CR>
+nmap <leader>nd :NERDTreeToggle<CR>
+nmap <leader>gg :GitGutterToggle<CR>
 nmap <leader>pd :setlocal ft=python.django<CR>
 nmap <leader>hd :setlocal ft=htmldjango<CR>

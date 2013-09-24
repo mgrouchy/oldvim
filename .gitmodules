@@ -28,3 +28,15 @@
 [submodule "bundle/stopsign"]
 	path = bundle/stopsign
 	url = https://github.com/joshuarh/vim-stopsign.git
+[submodule "bundle/vim-gitgutter"]
+	path = bundle/vim-gitgutter
+	url = https://github.com/airblade/vim-gitgutter
+[submodule "bundle/indent-guides"]
+	path = bundle/indent-guides
+	url = https://github.com/nathanaelkane/vim-indent-guides
+[submodule "bundle/jedi"]
+	path = bundle/jedi
+	url = https://github.com/davidhalter/jedi-vim.git
+[submodule "bundle/numbers.vim"]
+	path = bundle/numbers.vim
+	url = https://github.com/myusuf3/numbers.vim.git
