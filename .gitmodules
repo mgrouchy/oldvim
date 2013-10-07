@@ -46,3 +46,6 @@
 [submodule "bundle/vitality"]
 	path = bundle/vitality
 	url = https://github.com/sjl/vitality.vim.git
+[submodule "bundle/solarized-theme"]
+	path = bundle/solarized-theme
+	url = git://github.com/altercation/vim-colors-solarized.git
