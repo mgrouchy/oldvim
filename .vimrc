@@ -1,7 +1,11 @@
+"turn on pathogen
+call pathogen#incubate()
+call pathogen#helptags()
+
 set nocompatible "Default to act like vim, not vi
 set nowrap "don't wrap lines
 set background=dark "colorscheme
-colorscheme tomorrow_night
+colorscheme solarized
 set number "Turn on line numbers
 set numberwidth=4
 set backspace=indent,eol,start  "Allow backspace in insert mode
@@ -49,10 +53,6 @@ set cursorline
 
 setlocal incsearch "While typing a search command, show where the pattern matches
 setlocal hlsearch "When there is a previous search pattern, highlight all its matches
-"turn on pathogen
-call pathogen#incubate()
-call pathogen#helptags()
-
 " Enable file type detection
 filetype plugin indent on
 " Syntax of these languages are fussy over tabs Vs spaces
