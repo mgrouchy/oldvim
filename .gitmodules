@@ -55,3 +55,6 @@
 [submodule "bundle/gocode"]
 	path = bundle/gocode
 	url = git@github.com:Blackrush/vim-gocode.git
+[submodule "bundle/pytest-vim"]
+	path = bundle/pytest-vim
+	url = https://github.com/alfredodeza/pytest.vim.git
