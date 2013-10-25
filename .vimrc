@@ -37,6 +37,7 @@ set history=1000 "keep an extra long history
 set shiftwidth=4
 set tabstop=4
 syntax on "syntax highlighting
+
 "store temp files in non-annoying place
 set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
@@ -51,8 +52,11 @@ set colorcolumn=81 "to help us keep our lines under 80 chars
 set cursorline
 
 
-setlocal incsearch "While typing a search command, show where the pattern matches
 setlocal hlsearch "When there is a previous search pattern, highlight all its matches
+setlocal incsearch "While typing a search command, show where the pattern matches
+
+set pastetoggle=<F2>  "Map set paste to pastetoggle
+
 " Enable file type detection
 filetype plugin indent on
 " Syntax of these languages are fussy over tabs Vs spaces
@@ -151,19 +155,6 @@ set wildignore+=*/tmp/*,*.so,*.swp,*.zip,.git,.hg/,.svn/
 
 let g:gitgutter_enabled = 0
 
-" virtualenv settings
-"Add the virtualenv's site-packages to vim path(if you are in a virtualenv)
-py << EOF
-import os.path
-import sys
-import vim
-if 'VIRTUAL_ENV' in os.environ:
-    project_base_dir = os.environ['VIRTUAL_ENV']
-    sys.path.insert(0, project_base_dir)
-    activate_this = os.path.join(project_base_dir, 'bin/activate_this.py')
-    execfile(activate_this, dict(__file__=activate_this))
-EOF
-
 " Fix Cursor in TMUX
 if exists('$TMUX')
     let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
@@ -178,6 +169,7 @@ set mouse=a
 if exists('$TMUX')  " Support resizing in tmux
     set ttymouse=xterm2
 endif
+
 
 "mappings
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -201,3 +193,8 @@ nmap <leader>nd :NERDTreeToggle<CR>
 nmap <leader>gg :GitGutterToggle<CR>
 nmap <leader>pd :setlocal ft=python.django<CR>
 nmap <leader>hd :setlocal ft=htmldjango<CR>
+nmap <Leader>f <Esc>:Pytest file<CR>
+nmap <silent><Leader>c <Esc>:Pytest class<CR>
+nmap <silent><Leader>m <Esc>:Pytest method<CR>
+
+set shell=bash
