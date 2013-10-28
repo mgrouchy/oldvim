@@ -194,6 +194,8 @@ nmap <leader>gg :GitGutterToggle<CR>
 nmap <leader>pd :setlocal ft=python.django<CR>
 nmap <leader>hd :setlocal ft=htmldjango<CR>
 nmap <Leader>f <Esc>:Pytest file<CR>
+nmap <leader>j :RopeGotoDefinition<CR>
+nmap <leader>r :RopeRename<CR>
 nmap <silent><Leader>c <Esc>:Pytest class<CR>
 nmap <silent><Leader>m <Esc>:Pytest method<CR>
 
