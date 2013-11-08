@@ -171,6 +171,11 @@ if exists('$TMUX')  " Support resizing in tmux
 endif
 
 
+" Python mode settings
+
+" Skip errors and warnings
+let g:pymode_lint_ignore = "E501,C0110,C1001"
+
 "mappings
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "map <leader>
